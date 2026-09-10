@@ -1,8 +1,17 @@
-# netmon — home network monitor (GUI)
+# maninthemiddle — network monitor (GUI)
 
 A desktop dashboard that shows every device on **a network you own or
 administer**, their live upload/download, the domains each device looks up,
 and which servers they connect to.
+
+> ⚠️ **Authorized use only.** This is a network-analysis and security-testing
+> tool. Use it **only** on networks you own or have explicit written permission
+> to test. It includes active techniques (ARP-spoof interception, port scanning)
+> and detects cleartext credentials — running these against networks or people
+> without authorization is illegal in most jurisdictions (e.g. the US Computer
+> Fraud and Abuse Act, the UK Computer Misuse Act, and similar laws worldwide)
+> and may be a serious crime. You are solely responsible for how you use it.
+> See [Ethical use](#ethical-use) and [LICENSE](LICENSE).
 
 ## Run
 
@@ -43,12 +52,6 @@ For full-network visibility, run netmon on one of:
   device's domain lookups cleanly).
 
 Device discovery (ARP) works from any host on the LAN regardless.
-
-## Ethics / legality
-
-Intended for your own home/lab network, or one you're authorized to
-administer. Monitoring a network or people without authorization is illegal
-in most places. Don't.
 
 ## Full-network visibility: Intercept (ARP MITM)
 
@@ -95,3 +98,33 @@ Flags cleartext exposure across all devices, newest first:
 
 Still bounded by the same rule: SNI/Host tells you the **site**, never the
 encrypted page content or search terms.
+
+## Ethical use
+
+This project exists for **legitimate network administration and authorized
+security testing** — understanding and securing your own network, a home lab,
+or a client/employer network you have explicit permission to assess.
+
+**Acceptable use**
+- Monitoring devices on a network you personally own.
+- A home lab or test network you control.
+- A pentest / audit where you hold written authorization for the scope.
+- Learning how networks, ARP, TLS SNI, and cleartext protocols work.
+
+**Not acceptable — do not**
+- Monitor, intercept, or capture traffic of people without their informed
+  consent (roommates, family, neighbours, employees, public/other Wi-Fi).
+- Use it on any network you do not own or are not authorized to test.
+- Use captured credentials or data for unauthorized access.
+
+The credential-detection features exist to help you **find and fix** insecure
+cleartext protocols on your own network — not to harvest other people's logins.
+
+If you are unsure whether your use is authorized, assume it is **not** and get
+written permission first. The authors accept no liability for misuse.
+
+## License
+
+Released under the [MIT License](LICENSE). Provided "as is", without warranty
+of any kind. Using this software is entirely at your own risk and
+responsibility.
