@@ -10,7 +10,8 @@ and which servers they connect to.
 cd /home/ubuntu/net-monitor
 sudo ./.venv/bin/python run.py          # auto-picks / prompts for interface
 # or force an interface:
-sudo ./.venv/bin/python run.py wlp0s20f3
+sudo ./.venv/bin/python run.py 
+then select the wifi-interface
 ```
 
 Root is required — raw packet capture needs it. Without root the UI still
